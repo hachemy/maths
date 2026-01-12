@@ -1,3 +1,480 @@
+/* ==========================================================================
+   VARIABLES CSS - Palette de couleurs douces et attrayantes
+   ========================================================================== */
 :root {
-    --couleur-primaire : #2a6442;
+  /* Couleurs primaires douces */
+  --primary-light: #E3F2FD; /* Bleu très clair */
+  --primary: #64B5F6; /* Bleu doux */
+  --primary-dark: #42A5F5; /* Bleu légèrement plus soutenu */
+  
+  /* Couleurs secondaires pastel */
+  --secondary-light: #F3E5F5; /* Violet très clair */
+  --secondary: #BA68C8; /* Violet doux */
+  --secondary-dark: #AB47BC; /* Violet légèrement plus soutenu */
+  
+  /* Couleurs d'accent chaleureuses */
+  --accent-light: #FFF3E0; /* Orange très clair */
+  --accent: #FFB74D; /* Orange doux */
+  --accent-dark: #FFA726; /* Orange légèrement plus soutenu */
+  
+  /* Couleurs neutres pour le texte et l'arrière-plan */
+  --text-dark: #37474F; /* Gris foncé doux */
+  --text-light: #607D8B; /* Gris moyen doux */
+  --text-white: #FFFFFF; /* Blanc pur */
+  
+  --background-light: #FAFAFA; /* Blanc cassé très léger */
+  --background: #F5F5F5; /* Gris très clair */
+  --background-dark: #EEEEEE; /* Gris clair doux */
+  
+  /* Couleurs de succès et d'erreur douces */
+  --success: #81C784; /* Vert doux */
+  --error: #E57373; /* Rouge doux */
+  --warning: #FFD54F; /* Jaune doux */
+  --info: #4FC3F7; /* Bleu ciel doux */
+  
+  /* Effets et ombres */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-color: 0 4px 12px rgba(100, 181, 246, 0.2);
+  
+  /* Bordures et rayons */
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-full: 50%;
+  
+  /* Espacements standards */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  
+  /* Typographie */
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-secondary: 'Georgia', serif;
+}
+
+/* ==========================================================================
+   RÉINITIALISATION ET STYLES DE BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   TYPOGRAPHIE
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--space-md);
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--secondary-dark);
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid var(--background-dark);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--accent-dark);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-light);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   LAYOUT ET CONTAINERS
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section-light {
+  background-color: var(--background-light);
+}
+
+.section-colored {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+}
+
+/* ==========================================================================
+   BOUTONS
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  color: var(--text-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-color);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--text-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-dark);
+  color: var(--text-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(186, 104, 200, 0.2);
+  text-decoration: none;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--text-dark);
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-dark);
+  color: var(--text-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 183, 77, 0.2);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   CARTES ET CONTENEURS
+   ========================================================================== */
+.card {
+  background: var(--text-white);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: var(--space-md);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+  margin: -var(--space-lg) -var(--space-lg) var(--space-md) -var(--space-lg);
+}
+
+.card-title {
+  color: var(--text-dark);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* ==========================================================================
+   FORMULAIRES
+   ========================================================================== */
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--background-dark);
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--background-light);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.navbar {
+  background-color: var(--text-white);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-sm) 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--space-lg);
+}
+
+.nav-link {
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius-sm);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.hero-title {
+  color: var(--text-dark);
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+  color: var(--text-light);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  background-color: var(--text-dark);
+  color: var(--text-white);
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.footer a {
+  color: var(--primary-light);
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==========================================================================
+   UTILITAIRES
+   ========================================================================== */
+.text-center {
+  text-align: center;
+}
+
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+
+.bg-primary-light { background-color: var(--primary-light); }
+.bg-secondary-light { background-color: var(--secondary-light); }
+.bg-accent-light { background-color: var(--accent-light); }
+
+.rounded { border-radius: var(--border-radius-md); }
+.rounded-full { border-radius: var(--border-radius-full); }
+
+.shadow { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 2rem;
+    --space-lg: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  .nav-menu {
+    gap: var(--space-md);
+  }
+  
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--space-sm);
+  }
 }
